@@ -1,0 +1,60 @@
+body {
+  padding: 80px 80px;
+}
+h1 {
+  font-family: "Darker Grotesque", sans-serif;
+  color: #333344;
+  font-weight: normal;
+}
+h2 {
+  color: #333344;
+}
+p {
+  font-size: 18px;
+}
+.weather-app {
+  font-family: "Darker Grotesque", sans-serif;
+}
+.inputform {
+  padding-right: 0px;
+}
+.buttons {
+  padding-left: 0px;
+}
+
+.find {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.units {
+  position: relative;
+  top: -11px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+}
+
+.cities,
+.daily {
+  padding-bottom: 5px;
+}
+.default:hover {
+  font-size: 20px;
+}
+.week {
+  text-align: center;
+  font-size: 17px;
+}
+.week:hover {
+  color: #ffff;
+  font-size: 22px;
+  background: #5c636a;
+}
+.info,
+.temp {
+  padding-top: 7px;
+}
+.mid {
+  display: block;
+}
