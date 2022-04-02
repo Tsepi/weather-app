@@ -41,6 +41,8 @@ function showData(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  document.querySelector("#pressure").innerHTML = response.data.main.pressure;
 }
 
 function changeCityName(event) {
