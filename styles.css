@@ -8,6 +8,7 @@ h1 {
 }
 h2 {
   color: #333344;
+  display: inline;
 }
 p {
   font-size: 18px;
@@ -37,16 +38,19 @@ p {
   font-size: 13px;
   font-weight: bold;
 }
-a {
+a.links {
   text-decoration: none;
   color: black;
   cursor: default;
 }
-a:hover {
+a.links:hover {
   font-size: 20px;
   color: #333344;
 }
 
+.icon {
+  display: inline;
+}
 .cities,
 .daily {
   padding-bottom: 5px;
@@ -66,6 +70,11 @@ a:hover {
 .info,
 .temp {
   padding-top: 7px;
+}
+.icn {
+  padding-right: 0px;
+  margin-right: -50px;
+  margin-top: -15px;
 }
 .mid {
   display: block;
