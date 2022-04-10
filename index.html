@@ -47,9 +47,9 @@
       <div class="container forms">
         <div class="row">
           <div class="col-8 inputform">
-            <form>
+            <form id="search-form">
               <input
-                type="text"
+                type="search"
                 class="form-control"
                 placeholder="Search for a city"
                 id="city-name"
@@ -58,7 +58,8 @@
           </div>
           <div class="col-4 buttons">
             <button
-              type="button"
+              type="submit"
+              value="search"
               class="btn btn-outline-secondary find"
               id="search"
             >
@@ -92,7 +93,11 @@
                   
               </span>
               
-              <span class="degree"> 18</span>°C
+              <span class="degree"> 18</span>
+               <span class="units">
+                <a href="#" id="celsius"> °C </a> |
+                <a href="#" id="fahrenheit"> °F</a>
+              </span>
             </h2>
             <p>
               Humidity: <span id="humidity"> 81</span>%<br />

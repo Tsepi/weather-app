@@ -36,7 +36,15 @@ p {
   top: -11px;
   font-size: 13px;
   font-weight: bold;
-  color: white;
+}
+a {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+a:hover {
+  font-size: 20px;
+  color: #333344;
 }
 
 .cities,

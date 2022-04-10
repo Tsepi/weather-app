@@ -27,11 +27,11 @@ function changeTime(currentDate) {
 changeTime();
 
 function showData(response) {
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("h1").innerHTML = response.data.name;
 
-  document.querySelector(".degree").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector(".degree").innerHTML = Math.round(celsiusTemperature);
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
@@ -83,3 +83,24 @@ function getCurrentLocation(event) {
 }
 let locationButton = document.querySelector("button#location-dot");
 locationButton.addEventListener("click", getCurrentLocation);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  document.querySelector(".degree").innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector(".degree");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let farenheitLink = document.querySelector("#fahrenheit");
+farenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
