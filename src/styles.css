@@ -26,7 +26,11 @@ p {
 .buttons {
   padding-left: 0px;
 }
-
+.form-control {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.locate,
 .find {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
