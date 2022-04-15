@@ -50,6 +50,7 @@ function showData(response) {
   );
 
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
+  console.log(response.data);
 }
 
 let apiKey = `7d88e39fad8e3a2f1b2d1076c46f769c`;
@@ -119,3 +120,28 @@ document
 document
   .querySelector("#celsius")
   .addEventListener("click", displayCelsiusTemperature);
+
+function displayForcast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Fri", "Sat", "Sun", "Tues", "Weds", "Thurs"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  <div class="col-2 week">
+            ${day} <br />
+            <span class="fa-solid fa-cloud-showers-heavy"></span>
+            <span class="mid"> 
+              <span class="high">19°</span>/
+              <span class="low"> 13°</span>
+          </span>
+          `;
+
+    forecastHTML = forecastHTML + `</div>`;
+
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+displayForcast();
