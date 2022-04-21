@@ -26,6 +26,51 @@ function changeTime(currentDate) {
 }
 changeTime();
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
+function displayForcast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  //let days = ["Fri", "Sat", "Sun", "Tues", "Weds", "Thurs"];
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `  <div class="col-2 week">
+            ${formatDay(forecastDay.dt)} <br />
+        <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="Rainy" width="42" ">
+            <span class="mid"> 
+              <span class="high">${Math.round(forecastDay.temp.max)}°</span>/
+              <span class="low">${Math.round(forecastDay.temp.min)}°</span>
+          </span>
+          `;
+
+      forecastHTML = forecastHTML + `</div>`;
+
+      forecastElement.innerHTML = forecastHTML;
+    }
+  });
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiURLCoord = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiURLCoord).then(displayForcast);
+  console.log(apiURLCoord);
+}
 function showData(response) {
   celsiusTemperature = response.data.main.temp;
 
@@ -51,6 +96,8 @@ function showData(response) {
 
   document.querySelector("#pressure").innerHTML = response.data.main.pressure;
   console.log(response.data);
+
+  getForecast(response.data.coord);
 }
 
 let apiKey = `7d88e39fad8e3a2f1b2d1076c46f769c`;
@@ -120,28 +167,3 @@ document
 document
   .querySelector("#celsius")
   .addEventListener("click", displayCelsiusTemperature);
-
-function displayForcast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row">`;
-
-  let days = ["Fri", "Sat", "Sun", "Tues", "Weds", "Thurs"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `  <div class="col-2 week">
-            ${day} <br />
-            <span class="fa-solid fa-cloud-showers-heavy"></span>
-            <span class="mid"> 
-              <span class="high">19°</span>/
-              <span class="low"> 13°</span>
-          </span>
-          `;
-
-    forecastHTML = forecastHTML + `</div>`;
-
-    forecastElement.innerHTML = forecastHTML;
-  });
-}
-displayForcast();
