@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Weather App</title>
+     <link rel="icon" href="src/images/partly-cloudy.gif">
     
      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -35,21 +36,16 @@
   <div class="container">
 
       <div class="container weather-app">
-      <div class="container cities">
-        <div class="row">
-          <div class="col-1 default">Lagos</div>
-          <div class="col-1 default">Nairobi</div>
-          <div class="col-1 default">Sydney</div>
-          <div class="col-1 default">London</div>
-        </div>
-      </div>
+     
+<div class="container content">
+
 
       <div class="container forms">
         <div class="row">
           <div class="col-9 inputform">
-            <form id="search-form">
+            <form>
               <input
-                type="search"
+                type="text"
                 class="form-control"
                 placeholder="Search for a city"
                 id="city-name"
@@ -57,28 +53,26 @@
             </form>
           </div>
           <div class="col-3 buttons">
-           <button
+             <button
               type="button"
               class="btn btn-outline-secondary locate"
               id="location-dot"
             >
               <i class="fa-solid fa-location-dot"></i>
             </button>
-
             <button
-              type="submit"
-              value="search"
+              type="button"
               class="btn btn-outline-secondary find"
               id="search"
             >
               Search
             </button>
-          
+           
           </div>
         </div>
       </div>
 
-      <div class="container info">
+       <div class="container info">
         <div class="row">
           <div class="col-5 capital">
             <h1>Maseru</h1>
@@ -104,26 +98,34 @@
            
             <p>
               Humidity: <span id="humidity"> 81</span>%<br />
-              Wind: <span id="wind-speed"> 6</span>km/h<br />
+              Wind: <span id="wind-speed"> 6</span> km/h<br />
               Pressure: <span id="pressure">  1009</span> mb
             </p>
           </div>
         </div>
       </div>
 
+        <hr/>
+      
       <div class="container daily">
-        <h4>Daily</h4>
+        
         <div class="row" id="forecast">
           
         </div>
+       
+</div>
+<div class="git">
+<small>
+  <a href="https://github.com/Tsepi/weather-app" target="_blank" class="repository"> open-source code</a>, 
+  by Tsepi Daemane
+</small>
+</div>
+
       </div>
 
   </div>
 
-<small>
-  <a href="https://github.com/Tsepi/weather-app" target="_blank"> open-source code</a>, 
-  by Tsepi Daemane
-</small>
+
 
     <script src="src/index.js"></script>
 </body>

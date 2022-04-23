@@ -1,24 +1,31 @@
 body {
   padding: 80px 80px;
+  background-color: #fffefe;
 }
-h1 {
-  font-family: "Darker Grotesque", sans-serif;
-  color: #333344;
-  font-weight: normal;
-}
+h1,
 h2 {
   color: #333344;
-  display: inline;
+}
+h2 {
+  padding-top: 5px;
 }
 p {
   font-size: 18px;
 }
+
 .weather-app {
   font-family: "Darker Grotesque", sans-serif;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
-  margin: 20px 0;
+  margin: 25px 0;
   max-width: 650px;
-  padding: 20px 16px 24px 16px;
+  padding: 0px;
+  background-image: url("./images/mountains.png");
+  background-repeat: no-repeat;
+  background-size: 990px;
+}
+.content {
+  padding: 35px 35px 24px 35px;
+  background-color: rgba(243, 243, 243, 0.5);
 }
 .inputform {
   padding-right: 0px;
@@ -26,19 +33,23 @@ p {
 .buttons {
   padding-left: 0px;
 }
-.form-control {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-.locate,
-.find {
+.find,
+.locate {
+  background: #5c636a;
+  color: #ffff;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+.degree {
+  position: relative;
+  font-size: 35px;
+  bottom: -11px;
 }
 
 .units {
   position: relative;
-  top: -11px;
+  top: -7px;
+  left: -7px;
   font-size: 13px;
   font-weight: bold;
 }
@@ -51,16 +62,8 @@ a.links:hover {
   font-size: 20px;
   color: #333344;
 }
-
-.icon {
-  display: inline;
-}
-.cities,
 .daily {
   padding-bottom: 5px;
-}
-.default:hover {
-  font-size: 20px;
 }
 .week {
   text-align: center;
@@ -75,11 +78,13 @@ a.links:hover {
 .temp {
   padding-top: 7px;
 }
-.icn {
-  padding-right: 0px;
-  margin-right: -50px;
-  margin-top: -15px;
+.temp {
+  padding-left: 30px;
 }
 .mid {
   display: block;
+}
+.git {
+  float: right;
+  padding-top: 25px;
 }
