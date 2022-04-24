@@ -26,6 +26,15 @@ function changeTime(currentDate) {
 }
 changeTime();
 
+function changeBackground() {
+  let description = document.querySelector("#description");
+  let condition = description.innerText;
+  //console.log(description.innerText);
+
+  if (condition === `clear sky` || `light rain`) {
+    document.body.style.backgroundImage = `none`;
+  }
+}
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -63,7 +72,7 @@ function displayForcast(response) {
   });
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
+  //console.log(coordinates);
 
   let apiURLCoord = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiURLCoord).then(displayForcast);
@@ -96,6 +105,7 @@ function showData(response) {
   console.log(response.data);
 
   getForecast(response.data.coord);
+  changeBackground();
 }
 
 let apiKey = `7d88e39fad8e3a2f1b2d1076c46f769c`;

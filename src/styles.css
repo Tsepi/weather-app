@@ -45,7 +45,6 @@ p {
 }
 .icn {
   filter: drop-shadow(0.2rem 0.2rem 0.2rem rgb(224, 221, 221));
-  float: left;
 }
 .degree {
   position: relative;
