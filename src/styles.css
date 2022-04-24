@@ -1,6 +1,7 @@
 body {
   padding: 80px 80px;
   background-color: #fffefe;
+  background-image: url("https://lottiefiles.com/70156-clouds-bbs");
 }
 h1,
 h2 {
@@ -55,12 +56,18 @@ p {
 }
 a.links {
   text-decoration: none;
-  color: black;
+  color: #333344;
+  font-size: larger;
   cursor: default;
 }
 a.links:hover {
   font-size: 20px;
   color: #333344;
+}
+.links.active {
+  color: black;
+  cursor: default;
+  font-size: 17px;
 }
 .daily {
   padding-bottom: 5px;

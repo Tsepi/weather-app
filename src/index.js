@@ -41,8 +41,6 @@ function displayForcast(response) {
 
   let forecastHTML = `<div class="row">`;
 
-  //let days = ["Fri", "Sat", "Sun", "Tues", "Weds", "Thurs"];
-
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -148,6 +146,9 @@ document
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   document.querySelector(".degree").innerHTML = Math.round(celsiusTemperature);
+
+  document.querySelector("#fahrenheit").classList.remove("active");
+  document.querySelector("#celsius").classList.add("active");
 }
 
 let celsiusTemperature = null;
@@ -158,6 +159,9 @@ function displayFahrenheitTemperature(event) {
 
   let temperatureElement = document.querySelector(".degree");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  document.querySelector("#celsius").classList.remove("active");
+  document.querySelector("#fahrenheit").classList.add("active");
 }
 
 document
