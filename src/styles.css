@@ -1,5 +1,6 @@
 body {
   padding: 80px 80px;
+  padding-top: 100px;
   background-color: #fffefe;
   background-image: url("./images/greysmallclouds.gif");
   background-repeat: inherit;
@@ -18,8 +19,7 @@ p {
 .weather-app {
   font-family: "Darker Grotesque", sans-serif;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
-  margin: 10px 0;
-  margin-left: 40px;
+  margin: 0 auto;
   max-width: 650px;
   padding: 0px;
   background-image: url("./images/mountains.png");
