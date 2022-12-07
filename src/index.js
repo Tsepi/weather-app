@@ -161,6 +161,8 @@ function displayCelsiusTemperature(event) {
   document.querySelector(".degree").innerHTML = Math.round(celsiusTemperature);
   units = "metric";
 
+  document.querySelector("#w-speed-conversion").innerHTML = `km/h`;
+
   document.querySelector("#fahrenheit").classList.remove("active");
   document.querySelector("#celsius").classList.add("active");
   search();
@@ -175,6 +177,8 @@ function displayFahrenheitTemperature(event) {
 
   let temperatureElement = document.querySelector(".degree");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  document.querySelector("#w-speed-conversion").innerHTML = `mph`;
 
   document.querySelector("#celsius").classList.remove("active");
   document.querySelector("#fahrenheit").classList.add("active");
